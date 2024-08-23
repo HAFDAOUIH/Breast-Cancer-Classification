@@ -133,4 +133,4 @@ The notebook includes visualizations that compare the models across different me
 
 1. **Clone the Repository**: Clone the repository to your local machine using:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/HAFDAOUIH/Breast-Cancer-Classification.git
