@@ -1,32 +1,94 @@
-# Breast-Cancer-Classification
 # Breast Cancer Classification
 
 This repository contains a Jupyter notebook that demonstrates the process of training and evaluating various machine learning models to classify breast cancer data. The primary goal is to determine the best model based on several performance metrics, including accuracy, F1-score, precision, recall, and balanced accuracy.
 
-## Overview
+## About the Dataset
 
-Breast cancer is one of the most common cancers worldwide, and early detection is crucial for effective treatment. This project utilizes machine learning techniques to classify breast cancer tumors as either malignant or benign based on features extracted from digitized images of fine needle aspirate (FNA) of breast mass.
+### Description
 
-## Dataset
+Breast cancer is the most common cancer among women worldwide, accounting for 25% of all cancer cases. In 2015 alone, it affected over 2.1 million people. The disease starts when cells in the breast begin to grow uncontrollably, typically forming tumors that can be detected via X-ray or felt as lumps.
 
-The dataset used in this analysis is the **Breast Cancer Wisconsin (Diagnostic) Dataset**, which is commonly available through the UCI Machine Learning Repository. It contains features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, describing the characteristics of the cell nuclei present in the image.
+The key challenge in treating breast cancer is accurately classifying tumors as either malignant (cancerous) or benign (non-cancerous). This project focuses on using machine learning models to make this classification using the Breast Cancer Wisconsin (Diagnostic) Dataset.
 
-### Features:
+### Acknowledgments
 
-- **Radius** (mean of distances from center to points on the perimeter)
-- **Texture** (standard deviation of gray-scale values)
-- **Perimeter**
-- **Area**
-- **Smoothness** (local variation in radius lengths)
-- **Compactness** (perimeter^2 / area - 1.0)
-- **Concavity** (severity of concave portions of the contour)
-- **Concave points** (number of concave portions of the contour)
-- **Symmetry**
-- **Fractal dimension** (coastline approximation - 1)
+This dataset has been referred from Kaggle.
 
-### Target:
+### Objective
 
-- **Diagnosis**: The classification label (Malignant or Benign)
+1. **Understand the Dataset & Cleanup**: Explore and preprocess the dataset to prepare it for model training.
+2. **Build Classification Models**: Implement and train multiple machine learning models to predict whether the cancer type is malignant or benign.
+3. **Fine-Tune Hyperparameters**: Optimize the models by fine-tuning hyperparameters.
+4. **Compare Evaluation Metrics**: Evaluate and compare the performance of various classification algorithms using key metrics.
+
+## Dataset Features
+
+The dataset contains the following columns:
+
+| Column                  | Description                                   | Dtype  |
+|-------------------------|-----------------------------------------------|--------|
+| `id`                    | Identifier for each instance                  | int64  |
+| `diagnosis`             | Target variable - Malignant (M) or Benign (B) | object |
+| `radius_mean`           | Mean of distances from center to perimeter points | float64 |
+| `texture_mean`          | Standard deviation of gray-scale values       | float64 |
+| `perimeter_mean`        | Mean size of the tumor perimeter              | float64 |
+| `area_mean`             | Mean size of the tumor area                   | float64 |
+| `smoothness_mean`       | Local variation in radius lengths             | float64 |
+| `compactness_mean`      | Perimeter^2 / area - 1.0                      | float64 |
+| `concavity_mean`        | Severity of concave portions of the contour   | float64 |
+| `concave points_mean`   | Number of concave portions of the contour     | float64 |
+| `symmetry_mean`         | Symmetry of the tumor                         | float64 |
+| `fractal_dimension_mean`| Fractal dimension ("coastline approximation") | float64 |
+| `radius_se`             | Standard error for the mean radius            | float64 |
+| `texture_se`            | Standard error for the mean texture           | float64 |
+| `perimeter_se`          | Standard error for the mean perimeter         | float64 |
+| `area_se`               | Standard error for the mean area              | float64 |
+| `smoothness_se`         | Standard error for the mean smoothness        | float64 |
+| `compactness_se`        | Standard error for the mean compactness       | float64 |
+| `concavity_se`          | Standard error for the mean concavity         | float64 |
+| `concave points_se`     | Standard error for the mean concave points    | float64 |
+| `symmetry_se`           | Standard error for the mean symmetry          | float64 |
+| `fractal_dimension_se`  | Standard error for the mean fractal dimension | float64 |
+| `radius_worst`          | Worst (largest) value for the mean radius     | float64 |
+| `texture_worst`         | Worst (largest) value for the mean texture    | float64 |
+| `perimeter_worst`       | Worst (largest) value for the mean perimeter  | float64 |
+| `area_worst`            | Worst (largest) value for the mean area       | float64 |
+| `smoothness_worst`      | Worst (largest) value for the mean smoothness | float64 |
+| `compactness_worst`     | Worst (largest) value for the mean compactness| float64 |
+| `concavity_worst`       | Worst (largest) value for the mean concavity  | float64 |
+| `concave points_worst`  | Worst (largest) value for the mean concave points | float64 |
+| `symmetry_worst`        | Worst (largest) value for the mean symmetry   | float64 |
+| `fractal_dimension_worst`| Worst (largest) value for the mean fractal dimension | float64 |
+
+### Features Used for Analysis
+
+After analyzing the correlation with the target variable `diagnosis`, the following features were selected for model training and evaluation:
+
+- `radius_mean`
+- `texture_mean`
+- `perimeter_mean`
+- `area_mean`
+- `smoothness_mean`
+- `compactness_mean`
+- `concavity_mean`
+- `concave points_mean`
+- `symmetry_mean`
+- `radius_se`
+- `perimeter_se`
+- `area_se`
+- `compactness_se`
+- `concavity_se`
+- `concave points_se`
+- `radius_worst`
+- `texture_worst`
+- `perimeter_worst`
+- `area_worst`
+- `smoothness_worst`
+- `compactness_worst`
+- `concavity_worst`
+- `concave points_worst`
+- `symmetry_worst`
+- `fractal_dimension_worst`
 
 ## Models Evaluated
 
@@ -71,4 +133,4 @@ The notebook includes visualizations that compare the models across different me
 
 1. **Clone the Repository**: Clone the repository to your local machine using:
    ```bash
-   git clone <[repository-url](https://github.com/HAFDAOUIH/Breast-Cancer-Classification)>
+   git clone <repository-url>
